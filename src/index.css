@@ -113,10 +113,14 @@ input {
   color: black;
 }
 
-#select-user {
+.select-user {
   display: block;
   color: black;
   background-color: #ccc;
+}
+
+.select-user:hover {
+  color: black;
 }
 
 .users-card {

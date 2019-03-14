@@ -45,7 +45,6 @@ export default class App extends Component {
     this.setState({isVisibleEditMenu: true});
   }
   acceptChanges(user, event) {
-    event.preventDefault();
     let newUser = {
       name: user.name,
       company: {name: user.company},
@@ -108,12 +107,11 @@ export default class App extends Component {
       userCard = <UserCard activeUser={this.state.activeUser}
         showEditMenu={this.showEditMenu.bind(this)}/>;
     }
-    let id;
     let usersList = this.state.users.map((user, i) => {
-      this.state.activeUser === i ? id = 'select-user' : id='';
       if (~user.name.toLowerCase().indexOf( this.state.search.toLowerCase() )) {
         return (
-          <div key={i} className="user-string" id={id}
+          <div key={i} className={this.state.activeUser === i ?
+            "user-string select-user" : "user-string"}
             onClick={this.activateUser.bind(this, i)}>
             {user.name}
           </div>

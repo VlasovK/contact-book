@@ -28,6 +28,14 @@ export default class EditMenu extends Component {
   handleChange(key, event) {
     this.setState({[key]: event.target.value});
   }
+  handleSubmit(event) {
+    event.preventDefault();
+    if (this.state.name.trim() !== '') {
+      this.props.acceptChanges(this.state);
+    } else {
+      alert('fill in the name');
+    }
+  }
   render() {
     let labels = [];
     for (let key in this.state) {
@@ -40,7 +48,7 @@ export default class EditMenu extends Component {
       );
     }
     return (
-      <form onSubmit={this.props.acceptChanges.bind(this, this.state)}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         {labels}
         <button type="submit" className="button button-edit">
           Save
