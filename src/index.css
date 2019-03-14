@@ -26,6 +26,7 @@ footer {
 h1{
   font-size: 5vh;
   color: #5199ff;
+  cursor: default;
 }
 
 h2 {
@@ -103,6 +104,7 @@ input {
 .user-string {
   padding-left: 30px;
   line-height: 1.5em;
+  cursor: default;
 }
 
 .user-string:hover {

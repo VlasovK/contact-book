@@ -3,27 +3,22 @@ import React, {Component, Fragment} from 'react';
 export default class EditMenu extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-  }
-  static getDerivedStateFromProps(props, state) {
-    if (!state.name) {
-      return state = {
-        name: props.user.name,
-        company: props.user.company.name,
-        email: props.user.email,
-        phone: props.user.phone,
-        website: props.user.website,
-        avatar: props.user.avatar,
-        country: props.user.address.country,
-        state: props.user.address.state,
-        city: props.user.address.city,
-        streetA: props.user.address.streetA,
-        streetB: props.user.address.streetB,
-        streetC: props.user.address.streetC,
-        streetD: props.user.address.streetD,
-        zipcode: props.user.address.zipcode
-      };
-    } else return null;
+    this.state = {
+      name: props.user.name,
+      company: props.user.company.name,
+      email: props.user.email,
+      phone: props.user.phone,
+      website: props.user.website,
+      avatar: props.user.avatar,
+      country: props.user.address.country,
+      state: props.user.address.state,
+      city: props.user.address.city,
+      streetA: props.user.address.streetA,
+      streetB: props.user.address.streetB,
+      streetC: props.user.address.streetC,
+      streetD: props.user.address.streetD,
+      zipcode: props.user.address.zipcode
+    };
   }
   handleChange(key, event) {
     this.setState({[key]: event.target.value});
